@@ -32,8 +32,8 @@ const Video = () => {
   return (
     <Box>
       <Stack direction={{ xs: "column", md: "row" }}>
-        <Grid container spacing={2}>
-          <Grid item md={9}>
+        <Grid container spacing={1} sx={{}}>
+          <Grid item sm={12} md={9} sx={{}}>
             <Box sx={{ width: "100%", position: "sticky", top: "60px" }}>
               <ReactPlayer
                 url={`https://www.youtube.com/watch?v=${id}`}
@@ -43,30 +43,6 @@ const Video = () => {
               <Typography color="#000" variant="h6" fontWeight="bold" p={2}>
                 {title}
               </Typography>
-
-              {/* <Grid container spacing={2} direction="column" py={1} px={2}>
-                <Grid item xs={12} md={6}>
-                  <Link to={`/channel/${channelId}`}>
-                    <Typography
-                      variant={{ sm: "subtitle1", md: "h6" }}
-                      color="#000"
-                    >
-                      {channelTitle}
-                      <CheckCircleIcon
-                        sx={{ fontSize: "12px", color: "gray", ml: "5px" }}
-                      />
-                    </Typography>
-                  </Link>
-                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                    {parseInt(viewCount).toLocaleString()} views
-                  </Typography>
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <Typography variant="body1" sx={{ opacity: 0.7 }}>
-                    {parseInt(likeCount).toLocaleString()} likes
-                  </Typography>
-                </Grid>
-              </Grid> */}
 
               <Stack
                 direction="row"
@@ -101,20 +77,16 @@ const Video = () => {
               </Stack>
             </Box>
           </Grid>
-          <Grid item md={3} mt={2}>
-            <Box
-              px={2}
-              py={{ md: 1, xs: 5 }}
-              justifyContent="center"
-              alignItems="center"
-              flexDirection="column"
-            >
-              <Videos videos={videos} direction="column" />
-            </Box>
+
+          <Grid item sm={12} md={3} sx={{}}>
+          <Videos  videos={videos} direction={'column'} />
+
           </Grid>
+
+          
         </Grid>
       </Stack>
-    </Box>
+   </Box>
   );
 };
 

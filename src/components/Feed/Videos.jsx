@@ -8,16 +8,20 @@ import Loader from "../Video/Loader";
 const Videos = ({ videos, direction }) => {
   if (!videos?.length) return <Loader />;
   return (
-    <Grid container spacing={2} direction={direction}>
+   
+    <Box sx={{display: 'flex', flexWrap:'wrap', justifyContent: 'center'}}>
+
       {videos.map((item, index) => (
-        <Grid item xs={12} sm={6} md={3}>
-          <Box key={index}>
+      
+          <Box sx={{display:'flex', flexWrap:'wrap' }} key={index} >
             {item.id.videoId && <VideoCard video={item} />}
             {item.id.channelId && <ChannelCard channel={item} />}
           </Box>
-        </Grid>
+      
       ))}
-    </Grid>
+    </Box>
+
+
   );
 };
 
